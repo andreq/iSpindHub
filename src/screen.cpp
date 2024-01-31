@@ -98,7 +98,15 @@ void displaydata(String array_data[10],int last_seen_ms)
     //tft.setTextColor(ST7735_BLUE);
     tft.setTextColor(TFT_BLUE);
     //centerString("IP : " + WiFi.localIP().toString(),(TFT_WIDTH/2),7*TFT_HEIGHT/8);
-    centerString("IP : " + WiFi.localIP().toString(),(TFT_WIDTH/2),TFT_HEIGHT-10);
+    if ( WiFi.isConnected())
+    {
+        centerString("IP : " + WiFi.localIP().toString(),(TFT_WIDTH/2),TFT_HEIGHT-10);
+    }
+    else
+    {
+        centerString("WIFI DISCONNECTED",(TFT_WIDTH/2),TFT_HEIGHT-10);
+    }
+    
     //tft.print("IP : " + WiFi.localIP().toString());
     //tft.drawLine(1,120,127,120,ST7735_LIME);
     wdt_enable(WDTO_8S);

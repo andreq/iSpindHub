@@ -197,7 +197,7 @@ void make_text_line(JsonObject text_line_json){
     if (text_line_json.containsKey("var")){
         if (text_line_json.containsKey("cs")){
             String tmp_var =text_line_json["var"];
-            int val_check;
+            int val_check = 0;
             if (tmp_var=="#SG"){
                 val_check = SG.toInt();
             }else if ((tmp_var=="#RSSI"))

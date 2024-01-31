@@ -500,7 +500,7 @@ bool handleiSpindHubPost(AsyncWebServerRequest *request) // Handle controller se
             }
             if (strcmp(name, "ispindhubTZ") == 0) // Set iSpindHub TimeZone
             {
-                if ((strlen(value) < 3) || (strlen(value) > 5))
+                if ((strlen(value) < 3) || (strlen(value) > 50))
                 {
                     Log.warning(F("Settings update error, [%s]:(%s) not valid." CR), name, value);
                 }

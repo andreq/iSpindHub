@@ -204,7 +204,7 @@ bool merge(JsonVariant dst, JsonVariantConst src)
     {
         for (auto kvp : src.as<JsonObjectConst>())
         {
-            merge(dst.getOrAddMember(kvp.key()), kvp.value());
+            merge(dst[kvp.key()], kvp.value());
         }
     }
     else
